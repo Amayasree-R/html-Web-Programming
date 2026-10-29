@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Web Programming Report - Amayasree R</title>
+<style>
+  @page { size: A4; margin: 15mm 16mm; }
+  body { font-family: "Segoe UI", Calibri, sans-serif; font-size: 10.5pt; line-height: 1.45; color: #2d2d2d; margin: 0; }
+  .cover { height: 266mm; position: relative; page-break-after: always; }
+  .cover .band { background: #7b1e3a; color: #fff; padding: 45mm 14mm 18mm; }
+  .cover .band small { letter-spacing: 3px; font-size: 10pt; opacity: .85; }
+  .cover .band h1 { font-size: 30pt; line-height: 1.15; margin: 6mm 0 4mm; font-weight: 600; }
+  .cover .band p { font-size: 13pt; margin: 0; }
+  .cover .details { margin: 25mm 14mm 0; border-left: 4px solid #7b1e3a; padding-left: 8mm; font-size: 12.5pt; }
+  .cover .details div { margin: 5px 0; }
+  .cover .details span { display: inline-block; width: 38mm; color: #7b1e3a; font-weight: 600; }
+  .cover .foot { position: absolute; bottom: 0; left: 14mm; right: 14mm; border-top: 1px solid #c48b9f; padding-top: 4mm; font-size: 10pt; color: #777; }
+  h2 { font-size: 13pt; color: #7b1e3a; margin: 14px 0 5px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { background: #7b1e3a; color: #fff; border-radius: 4px; padding: 0 7px; font-size: 11pt; }
+  p { margin: 4px 0; }
+  code { font-family: Consolas, monospace; background: #f6e9ec; padding: 0 3px; border-radius: 3px; font-size: 9.3pt; }
+  pre { background: #2b2130; color: #f1e7ea; border-radius: 6px; padding: 7px 11px; font-family: Consolas, monospace; font-size: 8.5pt; line-height: 1.35; margin: 6px 0; white-space: pre-wrap; page-break-inside: avoid; }
+  pre .tg { color: #ff9eb5; }
+  pre .av { color: #b5e48c; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+  .shot { margin: 6px 0; page-break-inside: avoid; }
+  .shot img { width: 100%; border: 1px solid #d8c0c7; border-radius: 4px; }
+  .shot div { font-size: 8.8pt; color: #7b1e3a; text-align: center; }
+  table.info { width: 100%; border-collapse: collapse; font-size: 9.6pt; page-break-inside: avoid; }
+  table.info td, table.info th { padding: 3px 7px; border-bottom: 1px solid #e3cfd5; text-align: left; vertical-align: top; }
+  table.info th { color: #7b1e3a; }
+  .note { background: #fbf1f3; border-left: 3px solid #7b1e3a; padding: 5px 10px; font-size: 9.8pt; margin: 6px 0; }
+  ul.refs { font-size: 9.8pt; padding-left: 18px; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="band">
+    <small>WEB PROGRAMMING &bull; ASSIGNMENT</small>
+    <h1>Building an ECE Department Website with HTML</h1>
+    <p>A report on HTML structure, lists, links, images, tables, forms and semantic elements</p>
+  </div>
+  <div class="details">
+    <div><span>Name</span>Amayasree R</div>
+    <div><span>Roll No.</span>30</div>
+    <div><span>Class</span>S7 CSA</div>
+    <div><span>Subject</span>Web Programming</div>
+    <div><span>Date</span>29-10-2026</div>
+  </div>
+  <div class="foot">Website: Department of Electronics &amp; Communication Engineering &mdash; index.html + style.css</div>
+</div>
+
+<h2><span class="num">01</span> Overview</h2>
+<p>The aim of this assignment was to design a basic website for the <b>Electronics &amp; Communication Engineering (ECE)</b> department. The page has a coloured header with the department logo, a <b>side menu</b> on the left and the content on the right: a welcome note, programmes, faculty, facilities, an enquiry form and contact details. All content is written in HTML; the colours and the two-column layout come from an external file <code>style.css</code> linked in the head.</p>
+<div class="shot"><img src="screenshots/home.png" alt="Home page"><div>Screenshot 1 &ndash; Home page of the ECE website showing the header, side menu and first sections</div></div>
+
+<h2><span class="num">02</span> HTML Document Structure</h2>
+<div class="two">
+<script type="text/plain" class="code">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ECE Department | College of Engineering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- header, nav, main, footer -->
+</body>
+</html>
+</script>
+<table class="info">
+  <tr><th>Tag</th><th>Purpose</th></tr>
+  <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Declaration (not a tag) that the page is an HTML5 document.</td></tr>
+  <tr><td><code>&lt;html&gt;</code></td><td>Root element; every other element is inside it.</td></tr>
+  <tr><td><code>&lt;head&gt;</code></td><td>Metadata: character set, title and the link to the CSS file.</td></tr>
+  <tr><td><code>&lt;title&gt;</code></td><td>Name shown in the browser tab and in search results.</td></tr>
+  <tr><td><code>&lt;body&gt;</code></td><td>All visible content of the web page.</td></tr>
+</table>
+</div>
+
+<h2><span class="num">03</span> Headings, Paragraphs &amp; Formatting</h2>
+<p>Headings <code>&lt;h1&gt;</code>&ndash;<code>&lt;h6&gt;</code> show the hierarchy of the content: the department name is <code>&lt;h1&gt;</code>, section titles are <code>&lt;h2&gt;</code> and the menu title is <code>&lt;h3&gt;</code>. Paragraphs are written with <code>&lt;p&gt;</code>. For formatting I used <code>&lt;b&gt;</code> (bold), <code>&lt;i&gt;</code> (italic tagline), <code>&lt;u&gt;</code> (underline) and <code>&lt;abbr&gt;</code>, which shows the full form &ldquo;National Board of Accreditation&rdquo; when the mouse is placed over &ldquo;NBA&rdquo;.</p>
+<script type="text/plain" class="code">
+<h2>Welcome to the ECE Department</h2>
+<p>The Department of Electronics and Communication Engineering started functioning in <b>1998</b>.
+   It trains students in <u>electronics, signal processing, communication systems</u> and embedded design.</p>
+<p>The department is accredited by <abbr title="National Board of Accreditation">NBA</abbr> ...</p>
+</script>
+
+<h2><span class="num">04</span> Lists</h2>
+<div class="two">
+<div>
+<p>An <b>unordered list</b> (<code>&lt;ul&gt;</code>) was used for the six subjects, because the order of subjects does not matter. Each subject is a list item <code>&lt;li&gt;</code>. Square bullets were selected with the CSS rule <code>list-style-type: square</code>. The side menu is also an unordered list of links.</p>
+<script type="text/plain" class="code">
+<ul>
+  <li>Electronic Circuits</li>
+  <li>Digital Signal Processing</li>
+  <li>Analog and Digital Communication</li>
+  <li>Microprocessors and Microcontrollers</li>
+  <li>VLSI Design</li>
+  <li>Electromagnetic Theory</li>
+</ul>
+</script>
+</div>
+<div class="shot"><img src="screenshots/programmes.png" alt="Subjects list"><div>Screenshot 2 &ndash; Subjects shown as a bulleted list</div></div>
+</div>
+
+<h2><span class="num">05</span> Hyperlinks</h2>
+<p>Links are made with <code>&lt;a href="..."&gt;</code>. The side menu uses links such as <code>href="#staff"</code> that jump to the element with <code>id="staff"</code> on the same page. The contact section links to the college website, IEEE and AICTE; <code>target="_blank"</code> opens them in a new tab. A <code>mailto:</code> link opens the visitor&rsquo;s e-mail app.</p>
+<script type="text/plain" class="code">
+<li><a href="#staff">Our Faculty</a></li>
+Visit the <a href="https://www.example.edu" target="_blank">college website</a>,
+<a href="https://ieee.org" target="_blank">IEEE</a> or <a href="https://www.aicte-india.org" target="_blank">AICTE</a>
+Email: <a href="mailto:ece@example.edu">ece@example.edu</a>
+</script>
+
+<h2><span class="num">06</span> Images</h2>
+<p>The logo is added with the <code>&lt;img&gt;</code> tag, which has no closing tag. <code>src</code> is the file path (here an SVG file in the <i>images</i> folder), <code>alt</code> is the description used by screen readers or when the image cannot load, and <code>width="80"</code> sets the width in pixels (height adjusts automatically).</p>
+<script type="text/plain" class="code">
+<img src="images/ece-logo.svg" alt="ECE Department Logo" width="80">
+</script>
+
+<h2><span class="num">07</span> Tables</h2>
+<p>The faculty list is a table of six members. <code>&lt;thead&gt;</code> holds the heading row and <code>&lt;tbody&gt;</code> holds the data rows. Inside them, <code>&lt;tr&gt;</code> makes a row, <code>&lt;th&gt;</code> a heading cell and <code>&lt;td&gt;</code> a data cell. Alternate rows are shaded using CSS <code>nth-child(even)</code>.</p>
+<script type="text/plain" class="code">
+<table>
+  <thead>
+    <tr><th>Sl. No</th><th>Name</th><th>Designation</th><th>Specialization</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Dr. Meera Krishnan</td><td>Professor &amp; Head</td><td>Signal Processing</td></tr>
+    <tr><td>2</td><td>Dr. Joseph Mathew</td><td>Professor</td><td>VLSI Design</td></tr>
+    ... 4 more rows ...
+  </tbody>
+</table>
+</script>
+<div class="shot" style="width:58%;margin:6px auto"><img src="screenshots/faculty.png" alt="Faculty table"><div>Screenshot 3 &ndash; Faculty table</div></div>
+
+<h2><span class="num">08</span> Forms</h2>
+<div class="two">
+<div>
+<p>The enquiry form uses <code>&lt;form action="#" method="post"&gt;</code>. Text, e-mail and phone fields use <code>&lt;input&gt;</code> with types <code>text</code>, <code>email</code> and <code>tel</code>; <code>placeholder</code> shows a hint inside the box and <code>required</code> makes the field compulsory. Course preference is selected with <b>radio buttons</b> sharing the same <code>name</code>, so only one can be chosen. The <code>&lt;button type="submit"&gt;</code> sends the form.</p>
+<div class="shot"><img src="screenshots/enquiry.png" alt="Enquiry form"><div>Screenshot 4 &ndash; Enquiry form</div></div>
+</div>
+<script type="text/plain" class="code">
+<form action="#" method="post">
+  <p><label>Full Name<br>
+     <input type="text" name="fullname" placeholder="Enter your name" required></label></p>
+  <p><label>Email ID<br>
+     <input type="email" name="email" placeholder="name@mail.com" required></label></p>
+  <p><label>Phone<br>
+     <input type="tel" name="phone" placeholder="10 digit number"></label></p>
+  <p>Course Preference<br>
+     <label><input type="radio" name="course" value="btech" checked> B.Tech ECE</label>
+     <label><input type="radio" name="course" value="mtech"> M.Tech VLSI</label></p>
+  <p><button type="submit">Send Enquiry</button></p>
+</form>
+</script>
+</div>
+
+<h2 style="page-break-before:always"><span class="num">09</span> Semantic HTML</h2>
+<p>Semantic tags tell both the browser and the developer what each part of the page is. Compared to using only <code>&lt;div&gt;</code>, they improve readability, accessibility and search-engine ranking.</p>
+<table class="info">
+  <tr><th>Element</th><th>Meaning</th><th>Where it is used</th></tr>
+  <tr><td><code>&lt;header&gt;</code></td><td>Top/introductory area</td><td>Logo, department name and tagline</td></tr>
+  <tr><td><code>&lt;nav&gt;</code></td><td>Main navigation links</td><td>Left side menu</td></tr>
+  <tr><td><code>&lt;main&gt;</code></td><td>Main content of the page</td><td>Right-hand content area</td></tr>
+  <tr><td><code>&lt;article&gt;</code></td><td>Independent, self-contained content</td><td>Welcome note of the department</td></tr>
+  <tr><td><code>&lt;section&gt;</code></td><td>A themed part of the page with a heading</td><td>Programmes, Faculty, Facilities, Enquiry, Contact</td></tr>
+  <tr><td><code>&lt;address&gt;</code></td><td>Contact information</td><td>Department address, phone and e-mail</td></tr>
+  <tr><td><code>&lt;footer&gt;</code></td><td>Bottom area of the page</td><td>Copyright line</td></tr>
+</table>
+
+<h2><span class="num">10</span> Conclusion</h2>
+<p>The ECE department website shows how the basic HTML elements fit together to make a complete page. Separating the styling into <code>style.css</code> kept the HTML file clean and easy to read. The full source code is uploaded to GitHub.</p>
+
+<h2><span class="num">11</span> References</h2>
+<ul class="refs">
+  <li>W3Schools, &ldquo;HTML Tutorial&rdquo; &ndash; https://www.w3schools.com/html/</li>
+  <li>MDN Web Docs, &ldquo;HTML elements reference&rdquo; &ndash; https://developer.mozilla.org/en-US/docs/Web/HTML/Element</li>
+  <li>GeeksforGeeks, &ldquo;HTML Tutorial&rdquo; &ndash; https://www.geeksforgeeks.org/html/html-tutorial/</li>
+  <li>Thomas A. Powell, <i>HTML &amp; CSS: The Complete Reference</i>, 5th ed., McGraw-Hill.</li>
+</ul>
+
+<script>
+document.querySelectorAll('script.code').forEach(function (s) {
+  var lines = s.textContent.replace(/^\n/, '').replace(/\s+$/, '').split('\n');
+  var ind = Math.min.apply(null, lines.filter(function (l) { return l.trim(); }).map(function (l) { return l.match(/^ */)[0].length; }));
+  var t = lines.map(function (l) { return l.slice(ind); }).join('\n')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"([^"]*)"/g, '<span class="av">"$1"</span>')
+    .replace(/(&lt;\/?)([a-zA-Z0-9!]+)/g, '$1<span class="tg">$2</span>');
+  var pre = document.createElement('pre');
+  pre.innerHTML = t;
+  s.parentNode.replaceChild(pre, s);
+});
+</script>
+</body>
+</html>

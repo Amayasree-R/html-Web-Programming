@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <rect x="6" y="6" width="88" height="88" rx="14" fill="#fff"/>
+  <path d="M14 50 Q 26 20 38 50 T 62 50 T 86 50" fill="none" stroke="#7b1e3a" stroke-width="6"/>
+  <text x="50" y="84" font-family="Georgia" font-size="18" font-weight="bold" fill="#7b1e3a" text-anchor="middle">ECE</text>
+</svg>
